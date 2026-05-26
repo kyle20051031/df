@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>MediaPipe 表情辨識</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>MediaPipe 表情辨識</h1>
+      <p>透過相機偵測你的表情，並以語音回饋你。</p>
+    </header>
+
+    <main>
+      <div class="camera-panel">
+        <video id="input_video" autoplay playsinline muted></video>
+        <canvas id="output_canvas"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="start_button">啟用相機</button>
+        <button id="stop_button" disabled>停止相機</button>
+      </div>
+
+      <div class="status-box">
+        <p><strong>目前辨識結果：</strong><span id="expression_label">尚未開始</span></p>
+        <p><strong>語音回饋：</strong><span id="voice_feedback">按下「啟用相機」開始偵測</span></p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
